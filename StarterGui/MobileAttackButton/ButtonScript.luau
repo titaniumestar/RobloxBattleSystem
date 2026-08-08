@@ -5,14 +5,11 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 local animator = humanoid:WaitForChild("Animator")
+local attackEvent = ReplicatedStorage:FindFirstChild("PlayerAttack")
+local Animations = ReplicatedStorage.Animations
 local rightArm = character:WaitForChild("Right Arm")
 local Button = script.Parent
 
-local RemoteEvent = ReplicatedStorage:WaitForChild("RemoteEvent")
-
-local attackEvent = RemoteEvent:WaitForChild("PlayerAttack")
-
-local Animations = ReplicatedStorage:WaitForChild("Animations")
 local animationTarck = animator:LoadAnimation(Animations.DownwardChop)
 local animationIsPlaying = false
 
@@ -42,7 +39,7 @@ Button.Activated:Connect(function()
 		animationTarck = animator:LoadAnimation(Animations:FindFirstChild("LongDownwardChop"))
 		speed = 1.25
 	end
-
+	
 	animationTarck:Play(0.1,2,speed)
 	animationIsPlaying = true
 
