@@ -24,7 +24,7 @@ local Button = createUI(
 	"B"
 )
 Button.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
-Button.Text = "¹¥»÷"
+Button.Text = "Attack"
 Button.TextColor3 = Color3.new(0,0,0)
 Button.TextScaled = true
 Button.TextTransparency = 0.75
